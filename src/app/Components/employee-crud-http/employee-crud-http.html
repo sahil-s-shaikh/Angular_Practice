@@ -1,0 +1,49 @@
+<h3>Employee Crud</h3>
+<button (click)="fetchAllEmployees()">Fetch All Employee</button>
+
+<div class="container">
+    <div class="row">
+<div class="col-sm-8 ">
+<table class="table table-bordered">
+
+    <th>EmpID</th>
+     <th>EmpFname</th>
+      <th>EmpLname</th>
+       <th>EmpEmail</th>
+        <th>EmpAge</th>
+         <th>Empsal</th>
+          <th>EmpFullname</th>
+           <th>EmpySal</th>
+    @for (Emp of Employee$ | async; track $index) {
+
+        <tr >
+            <td>{{Emp.id}}</td>
+            <td>{{Emp.firstName}}</td>
+            <td>{{Emp.lastName}}</td>
+            <td>{{Emp.email}}</td>
+            <td>{{Emp.age}}</td>
+            <td>{{Emp.sal}}</td> 
+            <td>{{Emp. fullName()}}</td>
+            <td >{{Emp.yearlySal()}}</td>
+            
+                <button class="btn btn-danger" (click)="deleteEmployee(Emp.id)">Delete</button>
+                        
+        </tr>
+
+    }
+</table>
+</div>
+<div class="col-sm-4">
+      <p>firstName: <input #firstName /></p>
+      <p>lastName: <input #lastName /></p>
+      <p>email: <input #email /></p>
+      <p>gender: <input #gender /></p>
+      <p>sal: <input #sal /></p>
+      <button class="btn btn-primary" (click)="addEmp(firstName.value,lastName.value,email.value,gender.value,sal.value)">Add Emp</button>
+    </div>
+</div>
+</div>
+
+
+
+

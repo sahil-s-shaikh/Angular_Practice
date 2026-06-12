@@ -1,0 +1,34 @@
+<p>signal-demo1 works!</p>
+
+<div  class="border border-3 rounded-3 p-3 m-3">
+
+    <h3> Count : {{count()}}
+        <button class="btn btn-success" (click)="incrementCount()"> + </button>
+    </h3>
+    <h3>CountDouble : {{countDouble()}}</h3>
+    <h3>CountSquare : {{countSquare()}}</h3>
+</div>
+
+
+
+<div class="col-sm-3 offset-3">
+
+     <button class="btn btn-success" (click)="incrementuserId()">+</button>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4uVfxHvzUPc_arb0Ed1k9HxSDptWbIUcIg&s" alt="" 
+        class="card-img-top w-75">
+        <div class="card-body text-center">
+            <h3 class="card-title">Id:{{userData().id}}</h3>
+             <h3 class="card-title">Name:{{userData().name}}</h3>
+              <h3 class="card-title">UserName:{{userData().username}}</h3>
+               <h3 class="card-title">Phone:{{userData().phone}}</h3>
+                <h3 class="card-title">Email:{{userData().email}}</h3>
+                 <h3 class="card-title">Address:{{userData().address.city}}</h3>
+
+        </div>
+    </div>
+   
+</div>
+
+
+

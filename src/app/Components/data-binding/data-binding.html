@@ -1,0 +1,26 @@
+<div class="border border-3 rounded-3 p-3 m-2"> 
+    <div>User-Name : {{UserName}}</div> 
+
+
+<div>
+    <img src="{{my_img_url}}" alt="">
+    <img [src]="my_img_url" alt="">
+    <img bind-src="my_img_url" alt="">
+</div>
+   
+<div>1 way : <input type="text" value="{{UserName}}"></div>
+<div>1 way : <input type="text" [value]="UserName"></div>
+<div>1 way : <input type="text" bind-value="UserName"></div>
+<!-- <div>4 way : <input type="text" [(ngModel)]="UserName"></div> -->
+<div class="m-2">
+<button class="btn btn-primary" disabled ="{{Flag}}"> click me</button>
+<button class="btn btn-primary" [disabled] ="Flag"> click me</button>
+<button class="btn btn-primary" bind-disabled ="Flag"> click me</button>
+
+<button class="btn btn-primary" (click)="toggelFlag()"> click me</button>
+
+
+
+<span>Flag : {{Flag}}</span></div>
+</div>
+ 

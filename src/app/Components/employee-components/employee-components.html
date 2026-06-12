@@ -1,0 +1,34 @@
+<select [(ngModel)]="selected" (change)="changeData()">
+
+    <option value="all">
+        All Employees
+    </option>
+
+    <option value="male">
+        Male Employees
+    </option>
+
+    <option value="fe-male">
+        Fe-Male Employees
+    </option>
+    </select>
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Gender</th>
+        <th>Salary</th>
+    </tr>
+    @for (emp of employees; track emp.Id) {
+
+        <tr>
+            <td>{{emp.Id}}</td>
+            <td>{{emp.name}}</td>
+              <td>{{emp.Dep}}</td>
+            <td>{{emp.Gender}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    }
+</table>

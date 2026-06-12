@@ -1,0 +1,19 @@
+<p>form-demo1 works!</p>
+
+<form action="
+">
+Name:
+<input name="username" [(ngModel)]="userName" required="" placeholder="Pls Enter a userName"><br><br>
+Age:
+<input name="age" [(ngModel)]="age">
+</form>
+
+<style>
+    input.ng-invalid{
+        border: 5px solid red;
+    }
+
+    input.ng-valid{
+        border: 5px solid green;
+    }
+</style>

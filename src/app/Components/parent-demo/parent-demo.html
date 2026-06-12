@@ -1,0 +1,28 @@
+<div class="container text-center p-2 mx-1 ">
+
+    <div class="row">
+        <div class="border border-2 "></div>
+        <div>This is Parent Component</div>
+        <div>Parent Data A is {{a}}<input type="number" [(ngModel)]="a"> </div>
+        <div>My child Data B is  {{child2.b}}</div>
+        <div>My child Data C is {{parent_c}}</div>
+    </div>
+
+@for (Arr of NewArr; track $index) {
+    <b>{{Arr}} &nbsp;</b>
+
+}
+<input type="text" #NewNum>
+<button class="btn" (click)="NewArr.push(+NewNum.value)">Add</button>
+
+    <div class="row">
+       <div class="col-sm-6 border border-2 ">
+        <app-child1-demo [a]="a" [b]="child2.b " [NewArr]="NewArr"></app-child1-demo>
+    </div>
+
+    
+       <div class="col-sm-6 border border-2 ">
+        <app-child2-demo #child2 (csend)="reciveDatafromChild($event)"></app-child2-demo>
+       </div>
+    </div>
+</div>

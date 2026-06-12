@@ -1,0 +1,173 @@
+<div class="text-center">How Pipes Work's</div>
+<div class="border border-3 rounded p-2 m-2">
+
+    <div>lowercase , uppercase , titlecase Pipes</div>
+    <div>{{User_Name}}</div>
+    <div>{{User_Name | lowercase}}</div>
+    <div>{{User_Name | uppercase}}</div>
+    <div>{{User_Name | titlecase}}</div>
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+
+    <div>currency Pipes</div>
+    <div>{{salary}}</div>
+    <div>{{salary | currency}}</div>
+    <div>{{salary | currency : 'INR'}}</div>
+    <div>{{salary | currency : '&euro;'}}</div>
+    <div>{{salary | currency : '&yen;'}}</div>
+    
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+
+    <div>Date pipes</div>
+
+    <div>{{dateObj}}</div>
+    <div>{{dateObj | date}}</div>
+    <div>{{dateObj | date : 'short'}}</div>
+    <div>{{dateObj | date : 'long'}}</div>
+    <div>{{dateObj | date : 'medium'}}</div>
+    <div>{{dateObj | date : 'full'}}</div>
+
+    <div>{{dateObj | date}}</div>
+    <div>{{dateObj | date : 'shortDate'}}</div>
+    <div>{{dateObj | date : 'longDate'}}</div>
+    <div>{{dateObj | date : 'mediumDate'}}</div>
+    <div>{{dateObj | date : 'fullDate'}}</div>
+
+    <div>{{dateObj | date}}</div>
+    <div>{{dateObj | date : 'shortTime'}}</div>
+    <div>{{dateObj | date : 'longTime'}}</div>
+    <div>{{dateObj | date : 'mediumTime'}}</div>
+    <div>{{dateObj | date : 'fullTime'}}</div>
+
+    <div>{{dateObj | date}}</div>
+    <div>{{dateObj | date : 'dd-MMM-yyyy'}}</div>
+    <div>{{dateObj | date : 'hh:mm:ss a'}}</div>
+    <div>{{dateObj | date : 'fullTime' :"UTC"}}</div>
+    <div>{{dateObj | date : 'fullTime' : "IST"}}</div>
+    <div>{{dateObj | date : 'EEEE'}}</div>
+    
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+    <div>Number Pipes</div>
+    <div>{{10000000 | number}}</div>
+    <div>{{12.33223 | number : '3.2-3'}}</div>
+    <div>{{12.2 | number : '2.1-2'}}</div>
+    <div>{{0.3 | number : '3.2-3'}}</div>
+
+</div>
+<div class="border border-3 rounded p-2 m-2">
+    <div>Percent Pipes</div>
+    <div>{{2.4 | percent}}</div>
+    <div>{{12.4 | percent : '3.2-3'}}</div>
+    <div>{{0.3 | percent }}</div>
+
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+    <div>Percent Pipes</div>
+    <div>{{2.4 | percent}}</div>
+    <div>{{12.4 | percent : '3.2-3'}}</div>
+    <div>{{0.3 | percent }}</div>
+
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+    <div>keyvalue Pipes</div>
+    @for (use of user | keyvalue; track $index) {
+
+        <div>{{use.key}}=={{use.value}}</div>
+    }
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+   <div>slice Pipes</div>
+   <div>{{cars | slice :2}}</div>
+   <div>{{cars | slice : 1:4}}</div>
+   <div>{{'Angular is a FrameWork' | slice : 0:5}}</div>
+   <div>{{'Angular is a FrameWork' | slice : 0:-5}}</div>
+</div>
+
+
+<div class="border border-3 rounded p-2 m-2">
+  <div>Pipe Chaining</div>
+  <div>{{dateObj | date : 'full' | uppercase }}</div>
+  <div>{{dateObj | date : 'full' | lowercase }}</div>
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+
+    <div>Custome Pipes (Remaining)</div>
+
+<textarea [(ngModel)]="msg" maxlength="100"></textarea>
+<div>{{msg}}</div>
+<div>Remaining : {{msg | remaining}}</div>
+
+<div>Remaining : {{msg | remaining : 200}}</div>
+</div>
+
+
+<div class="border border-3 rounded p-2 m-2">
+
+    <div>Custome Pipes (odinal)</div>
+<input type="number" [(ngModel)]="num">
+
+<div>Input:{{num}}</div>
+
+<div>outPut:{{num | odinal}}</div>
+</div>
+
+
+<div class="border border-3 rounded p-2 m-2">
+<div>Custome Pipes (Creditcard)</div>
+
+<input type="text" [(ngModel)]="cardno" >
+
+<div>Input : {{cardno}}</div>
+
+<div> Output : {{cardno | creditcard}}</div>
+  
+</div>
+
+
+<div class="border border-3 rounded p-2 m-2">
+<div>Custome Pipes (age)</div>
+
+<input type="date" [(ngModel)]="DOB">
+
+<div>Input: {{DOB | date:'dd-MM-yyyy'}}</div>
+
+<div>Output : {{DOB | age }}</div>
+  
+</div>
+
+
+
+<div class="border border-3 rounded p-2 m-2">
+<div>Custome Directive (Alpha-Numeric)</div>
+
+<input type="text" appAlphaNumeric>
+</div>
+
+<div class="border border-3 rounded p-2 m-2">
+<div>Pure and Impure Pipe</div>
+@for (ele of numArr | mySort; track $index) {
+    <b>{{ele}} </b>
+}
+
+<input type="number" #newNum class="mx-1">
+<button (click)="numArr.push(+newNum.value)">Add </button>
+
+
+</div>
+
+
+
+
+
+
+
+

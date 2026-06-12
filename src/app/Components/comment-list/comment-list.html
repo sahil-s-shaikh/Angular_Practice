@@ -1,0 +1,17 @@
+<h3>Comments-List</h3>
+
+<table class="table table-borderd">
+
+    <tbody>
+        @for (comments of Comments$ | async; track $index) {
+
+            <tr>
+            <td>{{comments.id}}</td>
+            <td>{{comments.postId}}</td>
+            <td>{{comments.name}}</td>
+             <td>{{comments.email}}</td>
+              <td>{{comments.body}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

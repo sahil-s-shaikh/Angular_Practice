@@ -1,0 +1,21 @@
+<div class="card p-3">
+
+<div> EId:<input type="text" #eId></div>
+    
+
+   <div> Name:<input type="text" #name></div>
+
+   <div>Role:<input type="text" #role></div>
+
+   <div>Department:<input type="text" #department></div>
+<div>Salary:
+    <input type="text" #salary></div>
+<button
+class="btn btn-primary"
+(click)="addEmployee(eId.value,name.value,role.value,department.value,salary.value)">
+
+Add Employee
+
+</button>
+
+</div>

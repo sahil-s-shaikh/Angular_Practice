@@ -1,0 +1,81 @@
+
+ <div class="row pt-3">
+    <div class="col-3">
+        <div *ngIf="isDiv1visibal" class="p-3 text-center bg-danger"><h4>DIV-1</h4></div>
+    </div>
+
+    <div class="col-3">
+        <div *ngIf="isDiv2Visibale" class="p-3 text-center bg-success"><h4>DIV-2</h4></div>
+    </div>
+
+    <div class="col-3">
+        <div *ngIf="num1 == num2" class="p-3 text-center bg-primary" ><h4>DIV-3</h4></div>
+    </div>
+
+    <div class="col-3">
+        <div *ngIf="selectedValue =='USA'" class="p-3 text-center bg-warning"><h4>DIV-4</h4></div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-3 text-center">
+            <button class="btn btn-danger" (click)="Div1add()">add</button>
+             <button class="btn btn-primary mx-2" (click)="Div1remove()">remove</button>
+        </div>
+        <div class="col-3 text-center">
+           
+             <button class="btn btn-success mx-2" (click)="toggel()">toggel</button>
+        </div>
+         <div class="col-3 text-center">
+            <input [(ngModel)]="num1" type="text" placeholder="num1">
+             <input [(ngModel)]="num2" type="text" placeholder="num2">
+        </div>
+          <div class="col-3 text-center ">
+            <input [(ngModel)]="isChckbox" type="checkbox" >
+             <select [(ngModel)]="selectedValue" name="" id="">
+                <option value="" selected="disabled"> select </option>
+                <option value="India">India </option>
+                <option value="USA">USA </option>
+                <option value="UAE">UAE </option>
+                <option value="UK">UK </option>
+
+
+             </select>
+        </div>
+
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+    <ul>
+        <li *ngFor = " let city of citys" >{{city}}</li>
+    </ul></div>
+    <div class="col-3">
+        <div *ngFor = " let city of citys">{{city}}</div>
+    </div>
+    <div class="col-3">
+        <div>
+            <table class="table table-border">
+                <thead>
+                <tr>
+                    <td>carno</td>
+                    <td>carname</td>
+                    <td>carprice</td>
+                    <td>carstock</td>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let car of CarsList">
+
+                        <td>{{car.carno}}</td>
+                        <td>{{car.carname}}</td>
+                        <td>{{car.carPrice}}</td>
+                        <td>
+                            <span *ngIf="car.carAvalable">Avalable</span>
+                            <span *ngIf="!car.carAvalable">Out-of-stock</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 
